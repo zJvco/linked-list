@@ -1,14 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-typedef struct node {
-    int value;
-    struct node *next;
-} Node;
-
-typedef struct list {
-    Node *head;
-} List;
+#include "linked_list.h"
 
 Node* create_node(int v) {
     Node *node = (Node*) malloc(sizeof(Node));
@@ -38,6 +30,7 @@ void print(List *l)
         printf("%d ", aux->value);
         aux = aux->next;
     }
+    printf("\n");
 }
 
 void delete(List *l, int v) {
